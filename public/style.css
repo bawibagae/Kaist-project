@@ -1,269 +1,285 @@
 /* 
-  Refined Bright Glassmorphism Style 
-  인위적이지 않고 자연스러운 밝은 글래스모피즘 스타일입니다.
-  부드러운 파스텔 톤과 깨끗한 유리 질감을 사용하여 전문적이고 세련된 느낌을 줍니다.
+  LUXURY SPACE 2.0 - Apple-style Glassmorphism & Cosmic Aesthetic
 */
+
+:root {
+    --gold: #FFD700;
+    --gold-glow: rgba(255, 215, 0, 0.5);
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --accent-blue: #007AFF; /* Apple Blue */
+    --bg-dark: #02040a;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
 }
 
 body {
-    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-    /* 배경: 눈이 편안한 밝고 부드러운 파스텔 그라데이션 */
-    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    background-attachment: fixed;
-    color: #37474f;
-    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    background-color: var(--bg-dark);
+    color: #ffffff;
     min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Cosmic Background */
+.stars-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #02040a 100%);
+    overflow: hidden;
+}
+
+/* Animated Stars */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 60px 24px;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
 }
 
-/* 헤더 스타일: 깨끗하고 명확한 타이포그래피 */
+/* Header Design */
 header {
     text-align: center;
     margin-bottom: 60px;
+    animation: fadeInDown 1s ease-out;
 }
 
 header h1 {
-    font-size: 2.8rem;
+    font-size: 4rem;
     font-weight: 800;
-    color: #1a237e;
-    margin-bottom: 12px;
-    letter-spacing: -0.5px;
+    letter-spacing: -1.5px;
+    background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
 }
 
 header p {
-    font-size: 1.1rem;
-    color: #78909c;
-    font-weight: 500;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
 }
 
-/* 정교한 글래스 카드 스타일 */
+/* Glassmorphism Card */
 .card {
-    /* 맑은 유리 느낌의 배경 */
-    background: rgba(255, 255, 255, 0.7);
-    /* 고급스러운 블러 강도 조절 */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid var(--glass-border);
     border-radius: 24px;
-    padding: 32px;
-    
-    /* 얇고 섬세한 흰색 테두리 */
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    
-    /* 자연스러운 깊이감을 주는 부드러운 그림자 */
-    box-shadow: 
-        0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 10px 15px -3px rgba(0, 0, 0, 0.03);
-    
-    margin-bottom: 32px;
+    padding: 40px;
+    margin-bottom: 40px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
 }
 
 h2 {
-    margin-bottom: 24px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: #283593;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-/* 폼 요소 스타일링 */
+/* Auth Section */
+#auth-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Input Fields */
 .input-group {
-    margin-bottom: 24px;
+    margin-bottom: 25px;
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: #546e7a;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
 }
 
-.input-group input, 
-.input-group select, 
-.input-group textarea {
+input, select, textarea {
     width: 100%;
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.5);
-    border: 1.5px solid rgba(0, 0, 0, 0.05);
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 14px;
+    color: #fff;
     font-size: 1rem;
-    color: #263238;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-.input-group input:focus, 
-.input-group select:focus, 
-.input-group textarea:focus {
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent-blue);
+    background: rgba(0, 0, 0, 0.5);
     outline: none;
-    background: #ffffff;
-    border-color: #3f51b5;
-    box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.1);
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.2);
 }
 
+/* Buttons */
 .button-group {
     display: flex;
-    gap: 12px;
+    gap: 15px;
+    margin-top: 30px;
 }
 
 .btn {
-    padding: 12px 28px;
+    padding: 16px 32px;
     border: none;
     border-radius: 14px;
-    font-size: 0.95rem;
-    cursor: pointer;
     font-weight: 600;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
 }
 
-.btn-primary {
-    background: #3f51b5;
-    color: white;
+.btn-gold {
+    background: #fff;
+    color: #000;
 }
 
-.btn-primary:hover {
-    background: #303f9f;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3);
+.btn-gold:hover {
+    transform: scale(1.05);
+    background: #f0f0f0;
 }
 
-.btn-secondary {
-    background: rgba(0, 0, 0, 0.05);
-    color: #455a64;
+.btn-outline {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn-secondary:hover {
-    background: rgba(0, 0, 0, 0.08);
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
 }
 
-/* 리스트 섹션 레이아웃 */
-.lists-container {
+/* Main Content Layout */
+.auth-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#user-info {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.lists-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
-@media (max-width: 850px) {
-    .lists-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-.empty-msg {
-    text-align: center;
-    color: #b0bec5;
-    padding: 40px 0;
-    font-weight: 500;
-}
-
-/* 개별 포스트 아이템 */
+/* Post Item Styling */
 .post-item {
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 18px;
-    padding: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
     margin-bottom: 20px;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
+    animation: slideUp 0.6s ease-out forwards;
 }
 
 .post-item:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
 }
 
 .post-item h3 {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     margin-bottom: 12px;
-    color: #1a237e;
-    font-weight: 700;
+    color: #fff;
 }
 
 .post-item p {
-    font-size: 0.95rem;
-    color: #455a64;
-    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
 }
 
-.post-item .author {
-    font-size: 0.85rem;
-    color: #90a4ae;
-}
-
-.post-item .video-link {
-    display: inline-block;
-    color: #c62828;
+.video-link, .github-item-link {
+    color: var(--accent-blue);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-    padding: 6px 14px;
-    background: rgba(198, 40, 40, 0.05);
-    border-radius: 10px;
-    margin-top: 8px;
-    transition: background 0.2s;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
 }
 
-.post-item .video-link:hover {
-    background: rgba(198, 40, 40, 0.1);
+.video-link:hover, .github-item-link:hover {
+    text-decoration: underline;
 }
 
-/* 아이템 하단 액션 버튼 */
 .item-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
     margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.btn-sm {
-    padding: 6px 14px;
-    font-size: 0.8rem;
-    border-radius: 10px;
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.btn-edit {
-    color: #3f51b5;
-    background: transparent;
-    border: 1.5px solid rgba(63, 81, 181, 0.3);
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.btn-edit:hover {
-    background: rgba(63, 81, 181, 0.05);
-    border-color: #3f51b5;
-}
-
-.btn-delete {
-    color: #e53935;
-    background: transparent;
-    border: 1.5px solid rgba(229, 57, 53, 0.3);
-}
-
-.btn-delete:hover {
-    background: rgba(229, 57, 53, 0.05);
-    border-color: #e53935;
-}
-
-/* 푸터 영역 */
+/* Footer */
 footer {
     text-align: center;
     margin-top: 80px;
     padding-bottom: 40px;
-    color: #90a4ae;
+    color: rgba(255, 255, 255, 0.4);
     font-size: 0.9rem;
-    font-weight: 500;
+}
+
+/* Hidden elements */
+.hidden { display: none !important; }
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 { font-size: 2.5rem; }
+    .card { padding: 25px; }
 }
