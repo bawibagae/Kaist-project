@@ -1,0 +1,269 @@
+/* 
+  Refined Bright Glassmorphism Style 
+  인위적이지 않고 자연스러운 밝은 글래스모피즘 스타일입니다.
+  부드러운 파스텔 톤과 깨끗한 유리 질감을 사용하여 전문적이고 세련된 느낌을 줍니다.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+    /* 배경: 눈이 편안한 밝고 부드러운 파스텔 그라데이션 */
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    background-attachment: fixed;
+    color: #37474f;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+
+/* 헤더 스타일: 깨끗하고 명확한 타이포그래피 */
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1a237e;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #78909c;
+    font-weight: 500;
+}
+
+/* 정교한 글래스 카드 스타일 */
+.card {
+    /* 맑은 유리 느낌의 배경 */
+    background: rgba(255, 255, 255, 0.7);
+    /* 고급스러운 블러 강도 조절 */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-radius: 24px;
+    padding: 32px;
+    
+    /* 얇고 섬세한 흰색 테두리 */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    
+    /* 자연스러운 깊이감을 주는 부드러운 그림자 */
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.03);
+    
+    margin-bottom: 32px;
+}
+
+h2 {
+    margin-bottom: 24px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #283593;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 폼 요소 스타일링 */
+.input-group {
+    margin-bottom: 24px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #546e7a;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1.5px solid rgba(0, 0, 0, 0.05);
+    border-radius: 14px;
+    font-size: 1rem;
+    color: #263238;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: #3f51b5;
+    box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
+    background: #3f51b5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #303f9f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(0, 0, 0, 0.05);
+    color: #455a64;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/* 리스트 섹션 레이아웃 */
+.lists-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+@media (max-width: 850px) {
+    .lists-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.empty-msg {
+    text-align: center;
+    color: #b0bec5;
+    padding: 40px 0;
+    font-weight: 500;
+}
+
+/* 개별 포스트 아이템 */
+.post-item {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: all 0.25s ease;
+}
+
+.post-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.post-item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: #1a237e;
+    font-weight: 700;
+}
+
+.post-item p {
+    font-size: 0.95rem;
+    color: #455a64;
+    margin-bottom: 8px;
+}
+
+.post-item .author {
+    font-size: 0.85rem;
+    color: #90a4ae;
+}
+
+.post-item .video-link {
+    display: inline-block;
+    color: #c62828;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    background: rgba(198, 40, 40, 0.05);
+    border-radius: 10px;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+.post-item .video-link:hover {
+    background: rgba(198, 40, 40, 0.1);
+}
+
+/* 아이템 하단 액션 버튼 */
+.item-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    border-radius: 10px;
+}
+
+.btn-edit {
+    color: #3f51b5;
+    background: transparent;
+    border: 1.5px solid rgba(63, 81, 181, 0.3);
+}
+
+.btn-edit:hover {
+    background: rgba(63, 81, 181, 0.05);
+    border-color: #3f51b5;
+}
+
+.btn-delete {
+    color: #e53935;
+    background: transparent;
+    border: 1.5px solid rgba(229, 57, 53, 0.3);
+}
+
+.btn-delete:hover {
+    background: rgba(229, 57, 53, 0.05);
+    border-color: #e53935;
+}
+
+/* 푸터 영역 */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    padding-bottom: 40px;
+    color: #90a4ae;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
