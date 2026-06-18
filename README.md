@@ -211,4 +211,4 @@ Database
 * 프론트엔드와 백엔드 연동 과정
 * 팀 프로젝트 협업 경험
 
-https://bawibagae.github.io/Kaist-project/public/index.html
+https://bawibagae.github.io/Kaist-project/
